@@ -11,12 +11,19 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class designerController extends Controller
 {
+
+        public $columnsName  = [
+                'long_gate_name',
+                'description',
+                'address'
+        ];
+
         public function import(ImportCSVFile $import, Request $request)
         {
-                $retour = $import->select(array('long_gate_name', 'description', 'address'))->toArray();
+
+                $retour = $import->select($this->columnsName)->toArray();
 
                 dd($retour);
-
         }
 
 }
