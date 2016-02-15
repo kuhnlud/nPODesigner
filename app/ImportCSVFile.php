@@ -9,14 +9,11 @@ use  Illuminate\Support\Facades\Input;
 class ImportCSVFile extends ExcelFile
 {
 
-        public function getFile(){
-
+        public function getFile()
+        {
                 $file = Input::file('csvfile');
 
-                $filename = $this->UploadFile($file);
-
-                return $filename;
-
+                return $this->UploadFile($file);
         }
 
         public function UploadFile($file)

@@ -11,6 +11,6 @@ class PageController extends Controller
 {
     public function home()
     {
-            return view('pages.index');
+            return view('pages.import');
     }
 }

@@ -21,9 +21,10 @@ class designerController extends Controller
         public function import(ImportCSVFile $import, Request $request)
         {
 
-                $retour = $import->select($this->columnsName)->toArray();
+                $gatters = $import->select($this->columnsName)->toArray();
 
-                dd($retour);
+                return view('pages.gatter', compact('gatters'));
+                //dd($retour);
         }
 
 }
