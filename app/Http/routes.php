@@ -4,6 +4,9 @@ Route::get('/', 'PageController@home');
 
 Route::post('/import', 'designerController@import');
 
+
+Route::get('/Template', 'templateController@index');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

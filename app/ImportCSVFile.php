@@ -3,26 +3,31 @@
 namespace App;
 
 use \Maatwebsite\Excel\Files\ExcelFile as ExcelFile;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests;
-use  Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Input;
 
 class ImportCSVFile extends ExcelFile
 {
 
+        private $name;
+
         public function getFile()
         {
                 $file = Input::file('csvfile');
+
+                //@TODO: Pb with ADDRESS COLUMN
+
+                $this-> name = $this->setName($file->getClientOriginalName());
 
                 return $this->UploadFile($file);
         }
 
         public function UploadFile($file)
         {
-                $name = $this->setName($file->getClientOriginalName());
+                Storage::disk('gate')->put($this->name, file_get_contents($file));
 
-                $file->move('gatter/import', $name);
-
-                return 'gatter/import/' . $name;
+                return storage_path('gate') .'\\'. $this->name;
         }
 
         public function setName($originalName)

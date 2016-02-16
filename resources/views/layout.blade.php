@@ -7,7 +7,7 @@
     </head>
     <body>
         <header class="header">
-                <div class="container">
+                <div class="container is-fluid">
                         <div class="header-left">
                                 <a href="/" class="header-item">
                                         <h1 class="title"><strong>nPODesigner</strong></h1>
@@ -18,14 +18,14 @@
 
                 </div>
         </header>
-        <section class="section">
-
+        <div class="container is-fluid">
+                <section class="section">
                         <div class="columns">
 
                                 @yield('content')
 
                         </div>
-
-        </section>
+                </section>
+        </div>
     </body>
 </html>

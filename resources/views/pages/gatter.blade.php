@@ -12,16 +12,11 @@
                                 <tbody>
                                         @foreach( $gatters as $gatter )
                                                 <tr>
-                                                        <td>
-                                                                {{ $gatter['long_gate_name' ]}}
-                                                        </td>
-                                                        <td>
-                                                                {{ $gatter['description' ]}}
-                                                        </td>
+                                                        <td>    {{ $gatter['long_gate_name' ]}} </td>
+                                                        <td>    {{ $gatter['description' ]}}    </td>
                                                 </tr>
                                         @endforeach
                                 </tbody>
                         </table>
                 </div>
-
 @stop

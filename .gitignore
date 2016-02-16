@@ -1,5 +1,7 @@
 /vendor
 /node_modules
+/storage/gate
+/public/gatter
 Homestead.yaml
 Homestead.json
 .env
